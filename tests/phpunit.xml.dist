@@ -9,6 +9,10 @@
     </testsuite>
   </testsuites>
 
+  <logging>
+    <log type="coverage-clover" target="cov/clover.xml"/>
+  </logging>
+
   <php>
     <!-- These variables may alternatively be set as bash environment variables. -->
 

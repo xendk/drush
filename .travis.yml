@@ -30,6 +30,9 @@ env:
 notifications:
   irc: "irc.freenode.org#drush"
 before_script:
+  - composer install --dev --no-interaction
+  - mkdir cov
   - echo "sendmail_path='true'" >> `php --ini | grep "Loaded Configuration" | awk '{print $4}'`; export UNISH_DRUSH="${PWD}/drush" && cd tests
 script: phpunit $PHPUNIT_ARGS
-
+after_script:
+  - php vendor/bin/coveralls
