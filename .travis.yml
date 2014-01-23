@@ -30,6 +30,11 @@ env:
 notifications:
   irc: "irc.freenode.org#drush"
 before_script:
+  - composer install --dev --no-interaction
+  - phpenv rehash
+  - mkdir tests/cov
   - echo "sendmail_path='true'" >> `php --ini | grep "Loaded Configuration" | awk '{print $4}'`; export UNISH_DRUSH="${PWD}/drush" && cd tests
-script: phpunit $PHPUNIT_ARGS
-
+script: phpunit $PHPUNIT_ARGS --coverage-clover=`pwd`/cov/clover.xml
+after_script:
+  - cd ..
+  - php vendor/bin/coveralls -v
