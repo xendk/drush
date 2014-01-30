@@ -426,6 +426,7 @@ function drush_get_global_options($brief = FALSE) {
     $options['shell-aliases']       = array('hidden' => TRUE, 'merge' => TRUE, 'never-propagate' => TRUE, 'description' => 'List of shell aliases.');
     $options['path-aliases']        = array('hidden' => TRUE, 'never-propagate' => TRUE, 'description' => 'Path aliases from site alias.');
     $options['ssh-options']         = array('never-propagate' => TRUE, 'description' => 'A string of extra options that will be passed to the ssh command (e.g. "-p 100")');
+    $options['drush-coverage']      = array('hidden' => TRUE, 'never-post' => TRUE, 'propagate-cli-value' => TRUE, 'description' => 'File to save code coverage data into.');
 
     $command = array(
       'options' => $options,
