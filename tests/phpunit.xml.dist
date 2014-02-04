@@ -33,4 +33,10 @@
 
     <includePath>.</includePath>
   </php>
+  <filter>
+    <blacklist >
+      <directory suffix='.php'>.</directory>
+      <directory suffix='.inc'>.</directory>
+    </blacklist>
+  </filter>
 </phpunit>
