@@ -33,4 +33,13 @@
 
     <includePath>.</includePath>
   </php>
+  <filter>
+    <whitelist addUncoveredFilesFromWhitelist="true">
+      <directory suffix='.php'>..</directory>
+      <directory suffix='.inc'>..</directory>
+      <exclude>
+        <directory suffix=".php">tests</directory>
+      </exclude>
+    </whitelist>
+  </filter>
 </phpunit>
